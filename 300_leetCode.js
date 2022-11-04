@@ -93,6 +93,7 @@ let longestCommonPrefix = (strs) => {
   return prefix;
 };
 // console.log(longestCommonPrefix(arrStr));
+//#endregion ex_14
 //#region ex_20
 // 20. VALID PARENTHESES
 /**
@@ -157,7 +158,8 @@ function linkedList(arr) {
 l1 = linkedList(l1);
 l2 = linkedList(l2);
 // console.log(mergeTwoLists(l1, l2));
-
+//#endregion ex_21
+//#region ex_26
 //26. REMOVE DUPLICATES FROM SORTED ARRAY
 /**
  * Input: nums = [1,1,2]
@@ -174,8 +176,69 @@ let removeDuplicate = (nums) => {
   return newSet.size;
 };
 var arrNum = [1, 1, 2];
-console.log(removeDuplicate(arrNum));
+// console.log(removeDuplicate(arrNum));
+//#endregion ex_26
+//#region ex_27
+//27. REMOVE ELEMENT
+/**
+ * Input: nums = [3,2,2,3], val = 3
+ *Output: 2, nums = [2,2,_,_]
+ *Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+ *It does not matter what you leave beyond the returned k (hence they are underscores).
+ */
+var nums = [3, 2, 2, 3];
+let removeElement = (nums, val) => {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    if (nums[i] === val) {
+      nums.splice(i, 1);
+    }
+    console.log(nums);
+  }
+  return nums.length;
+};
+// console.log(removeElement(nums, 2));
+//#endregion ex_27
+// TRIED FILTER METHOD BUT LEETCODE DOESNT ACCEPT THE SOLUTION
+//#region ex_35
+// 35. SEARCH INSERT POSITION
+let searchInsertPosition = (nums, target) => {
+  let result = nums.findIndex((num) => num === target);
+  if (result === -1) {
+    if (target < nums[0]) {
+      return 0;
+    } else if (target > nums[nums.length - 1]) {
+      return nums.length;
+    } else {
+      nums.forEach((num, index) => {
+        if (target >= num && target <= nums[index + 1]) {
+          result = index + 1;
+        }
+      });
+    }
+  }
+  return result;
+};
+var nums = [1, 3, 5, 6];
+// console.log(searchInsertPosition(nums, 2));
+//#endregion ex_35
+//#region ex_58
+//58. LENGTH OF LAST WORD
 
+//#endregion ex_58
+let lengthOfTheLastWord = (str) => {
+  let arrLetter = str.split(" ");
+  arrLetter = arrLetter.filter((item) => {
+    return item !== "";
+  });
+  console.log(arrLetter);
+  return arrLetter[arrLetter.length - 1].length;
+};
+console.log(lengthOfTheLastWord("   fly me   to   the moon  "));
+var listItem = [1, 1, 2, 2, 2, 3, 4];
+let temp = new Set(listItem);
+console.log(temp);
+listItem = Array.from(temp);
+console.log(listItem);
 //#endregion EASY
 
 //#region MEDIUM
