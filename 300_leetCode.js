@@ -224,7 +224,6 @@ var nums = [1, 3, 5, 6];
 //#region ex_58
 //58. LENGTH OF LAST WORD
 
-//#endregion ex_58
 let lengthOfTheLastWord = (str) => {
   let arrLetter = str.split(" ");
   arrLetter = arrLetter.filter((item) => {
@@ -233,12 +232,59 @@ let lengthOfTheLastWord = (str) => {
   console.log(arrLetter);
   return arrLetter[arrLetter.length - 1].length;
 };
-console.log(lengthOfTheLastWord("   fly me   to   the moon  "));
-var listItem = [1, 1, 2, 2, 2, 3, 4];
-let temp = new Set(listItem);
-console.log(temp);
-listItem = Array.from(temp);
-console.log(listItem);
+// console.log(lengthOfTheLastWord("   fly me   to   the moon  "));
+//#endregion ex_58
+//#region ex_66
+//66. Plus One
+/**
+ * Input: digits = [1,2,3]
+ *Output: [1,2,4]
+ *Explanation: The array represents the integer 123.
+  Incrementing by one gives 123 + 1 = 124.
+  Thus, the result should be [1,2,4].
+  *Input: digits = [9]
+  *Output: [1,0]
+  *Explanation: The array represents the integer 9.
+Incrementing by one gives 9 + 1 = 10.
+Thus, the result should be [1,0].
+ */
+let plusOne = (digits) => {
+  let num = BigInt(digits.join("")) + 1n;
+  return num.toString().split("");
+};
+// var digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3];
+// var digits2 = [9];
+// var digits3 = [1, 2, 3];
+// console.log(plusOne(digits));
+// console.log(plusOne(digits2));
+// console.log(plusOne(digits3));
+//#endregion ex_66
+//#region ex_67
+// 67. Add Binary
+/**
+ * Input: a = "11", b = "1"
+ * Output: "100"
+ * Input: a = "1010", b = "1011"
+ * Output: "10101"
+ */
+
+let addBinary = (a, b) => {
+  return (BigInt("0b" + a) + BigInt("0b" + b)).toString(2);
+};
+// console.log(addBinary("11", "1"));
+//#endregion ex_67
+//#region ex_69
+// 69. Sqrt(x)
+let mySqrt = (x) => {
+  return Math.floor(Math.sqrt(x));
+};
+// console.log(mySqrt(8));
+//#endregion ex_67
+//#region ex_70
+// 70. Climbing Stairs
+let climbingStairs = (n) => {};
+console.log(climbingStairs(10));
+//#endregion ex_70
 //#endregion EASY
 
 //#region MEDIUM
