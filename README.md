@@ -17,7 +17,7 @@
   #endregion ex_1
   ```
 - At the end of every exercise, I commeneted the `console.log(funcion(...))` in order to avoid the console logging lots of line. In case you want to see how it runs, just simpy remove the comment `//` at the start of that line code.
-- To fast navigate to specific excercise, you can `Ctrl + F` (_Windows_) or  `Cmd + F` (_macOS_) and type in the excercise **title** or **number** of it.
+- To fast navigate to specific excercise, you can <kbd>Ctrl</kbd> + <kbd>F</kbd> (_Windows_) or  <kbd>Cmd</kbd> + <kbd>F</kbd> (_macOS_) and type in the excercise **title** or **number** of it.
 - It would be more useful if you install Quokka extension, which visualize instantly the result, data on the **IDE** (VsCode tested). But I don't recommend to use it for debugging process because every browser (FireFox, Edge, Chrome,...) do it more effective.
 ## About this `README.md`
 - I see this README as my welcome to all of you. In the bellow section, it will be my daily diary about this project. I keep it update which exercises that I have done along with date.
