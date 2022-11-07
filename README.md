@@ -36,5 +36,8 @@
     - Done: 58, 66, 67, 69, (15)
     - In progress: 70 (1)
 
-### Done: 15
+- **07-Nov (Day_4)**
+    - Done: 70, 88, (17)
+    - In progress: 83 (1)
+### Done: 17
 ### In progress: 1

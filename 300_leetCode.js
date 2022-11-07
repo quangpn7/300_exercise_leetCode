@@ -281,10 +281,78 @@ let mySqrt = (x) => {
 // console.log(mySqrt(8));
 //#endregion ex_67
 //#region ex_70
-// 70. Climbing Stairs
-let climbingStairs = (n) => {};
-console.log(climbingStairs(10));
+// 70. CLIMBING STAIRS
+/**
+ * Input: n = 2
+ * Output: 2
+ * Explanation: There are two ways to climb to the top.
+ * 1. 1 step + 1 step
+ * 2. 2 steps
+ */
+let climbingStairs = (n) => {
+  if (n == 1 || n == 0) {
+    return 1;
+  }
+  let first = 1;
+  let second = 2;
+  for (let i = 3; i <= n; i++) {
+    let third = first + second;
+    first = second;
+    second = third;
+  }
+  return second;
+};
+// console.log(climbingStairs());
+
 //#endregion ex_70
+//#region ex_83
+// 83. REMOVE DUPLICATES FROM SORTED LIST
+/**
+ * Input: head = [1,1,2]
+ * Output: [1,2]
+ * Input: head = [1,1,2,3,3]
+ * Output: [1,2,3]
+ */
+// let deleteDulicates = (head) => {
+//   let set = new Set(head);
+//   return set;
+// };
+//return after getting better at linked list
+// console.log(deleteDulicates([1, 1, 2, 3, 4, 5, 6]));
+//#endregion ex_83
+//#region ex_88
+// 88. MERGE SORTED ARRAY
+/**
+ * Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+ * Output: [1,2,2,3,5,6]
+ * Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+ The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+ */
+let merge = (nums1, m, nums2, n) => {
+  insertIndex = m + n - 1;
+  //wrap the index of nums1 and nums2 by -1 the m and n
+  m--;
+  n--;
+  while (n >= 0) {
+    if (m >= 0 && nums1[m] > nums2[n]) {
+      nums1[insertIndex] = nums1[m];
+      m--;
+    } else {
+      nums1[insertIndex] = nums2[n];
+      n--;
+    }
+    insertIndex -= 1;
+  }
+  return nums1;
+};
+
+// var nums1 = [1, 2, 5, 7, 0, 0];
+// var m = 4;
+// var nums2 = [2, 5];
+// var n = 2;
+// console.log(merge(nums1, m, nums2, n));
+//#endregion ex_88
+
 //#endregion EASY
 
 //#region MEDIUM
