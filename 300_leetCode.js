@@ -352,6 +352,25 @@ let merge = (nums1, m, nums2, n) => {
 // var n = 2;
 // console.log(merge(nums1, m, nums2, n));
 //#endregion ex_88
+//#region ex_121
+// 121. BEST TIME TO BUY AND SELL STOCK
+let maxProfit = (arr) => {
+  // let index = arr.length - 1;
+  let maxPriceOfDay = arr[arr.length - 1];
+  let maxProfit = 0;
+  for (let index = arr.length - 1; index >= 0; index--) {
+    if (maxPriceOfDay < arr[index]) {
+      maxPriceOfDay = arr[index];
+    } else if (maxPriceOfDay > arr[index]) {
+      maxProfit = Math.max(maxProfit, maxPriceOfDay - arr[index]);
+    }
+  }
+  return maxProfit;
+};
+
+var arrPrice = [7, 1, 4, 3, 6, 4];
+console.log(maxProfit(arrPrice));
+//#endregion ex_121
 
 //#endregion EASY
 
